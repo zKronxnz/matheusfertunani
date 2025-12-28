@@ -9,5 +9,3 @@ title: Blog
 **Tags:** narrative, first-post
 
 ---
-
-*Novos posts aparecerão aqui automaticamente quando você os criar!*

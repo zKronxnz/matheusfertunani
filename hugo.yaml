@@ -57,8 +57,7 @@ params:
 
   footer:
     displayCopyright: true
-    displayPoweredBy: true
-    copyright: "© 2025 Matheus Fertunani - All Rights Reserved"
+    displayPoweredBy: false
 
   editURL:
     enable: false
