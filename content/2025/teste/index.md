@@ -12,9 +12,8 @@ draft: false
 Estou subindo esse primeiro post, estou atualmente eme um nvim, com lazyvim instalado,
 archlinux com i3wm, no meu notebook. 
 
-{{< filetree >}}
-{{< file-tree-item name="~" >}}
-$ neofetch
+```
+[math@arch ~]$ neofetch
                     -`                    math@arch
                    .o+`                   ---------
                   `ooo/                   OS: Arch Linux x86_64
@@ -35,6 +34,5 @@ $ neofetch
  `++:.                           `-/+/
  .`                                 `/
 
-$ 
-{{< /file-tree-item >}}
-{{< /filetree >}}
+[math@arch ~]$
+```
