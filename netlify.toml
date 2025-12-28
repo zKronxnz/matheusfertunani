@@ -1,7 +1,7 @@
 [build]
-publish = "public"
-command = "hugo --gc --minify -b ${DEPLOY_PRIME_URL}"
+  publish = "public"
+  command = "hugo --gc --minify"
 
 [build.environment]
-HUGO_VERSION = "0.152.2"
-GO_VERSION = "1.22"
+HUGO_VERSION = "0.153.3"
+HUGO_ENV = "production"

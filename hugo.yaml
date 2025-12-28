@@ -1,14 +1,10 @@
 # Hugo configuration file
-title: AkitaOnRails.com
+title: Matheus Fertunani
 languageCode: "pt-BR"
-baseURL: "https://www.akitaonrails.com/"
+baseURL: "https://matheusfertunani.netlify.app/"
 
 outputs:
   home: [HTML,RSS]
-
-services:
-  disqus:
-    shortname: akitaonrails
 
 # import hextra as module
 module:
@@ -27,37 +23,35 @@ markup:
 
 menu:
   main:
+    - name: Blog
+      pageRef: /blog
+      weight: 1
     - name: About
       pageRef: /about
-      weight: 1
-    - name: Contact ↗
-      url: "https://github.com/akitaonrails"
       weight: 2
-    - name: Search
+    - name: GitHub
+      url: "https://github.com/zKronxnz/matheusfertunani"
       weight: 3
+    - name: Search
+      weight: 4
       params:
         type: search
     - name: RSS
-      weight: 4
+      weight: 5
       url: "/index.xml"
       params:
         icon: rss
   sidebar:
     - name: GitHub
       weight: 1
-      url: "https://github.com/akitaonrails/akitaonrails.github.io"
+      url: "https://github.com/zKronxnz/matheusfertunani"
       params:
         icon: github
     - name: Twitter
-      weight: 1
-      url: "https://x.com/AkitaOnRails"
+      weight: 2
+      url: "https://x.com/zKronxnz"
       params:
         icon: x-twitter
-    - name: Instagram
-      weight: 1
-      url: "https://instagram.com/AkitaOnRails"
-      params:
-        icon: instagram
 
 params:
   navbar:
@@ -70,7 +64,7 @@ params:
 
   editURL:
     enable: false
-    base: "https://github.com/imfing/hextra-starter-template/edit/main/content"
+    base: "https://github.com/zKronxnz/matheusfertunani/edit/main/content"
 
   # Keep default youtube shortcode as configurable
   youtubeDefaults:
@@ -82,7 +76,7 @@ params:
     default: light
 
   author:
-    name: Fabio Akita
-    email: fabioakita@gmail.com
+    name: Matheus Fertunani
+    email: matheus@email.com
 
-  description: "Blog do Fabio Akita do Canal do YouTube 'Akitando' falando sobre tecnologia, carreira e coisas geek."
+  description: "Blog pessoal sobre tecnologia, desenvolvimento de software e inovação."
