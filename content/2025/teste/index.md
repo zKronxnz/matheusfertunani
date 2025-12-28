@@ -12,12 +12,14 @@ draft: false
 Estou subindo esse primeiro post, estou atualmente eme um nvim, com lazyvim instalado,
 archlinux com i3wm, no meu notebook. 
 
-[math@arch ~]$ neofetch
-                   -`                    math@arch
-                  .o+`                   ---------
-                 `ooo/                   OS: Arch Linux x86_64
-                `+oooo:                  Host: Aspire E1-571 V1.09
-               `+oooooo:                 Kernel: 6.14.9-arch1-1
+{{< filetree >}}
+{{< file-tree-item name="~" >}}
+$ neofetch
+                    -`                    math@arch
+                   .o+`                   ---------
+                  `ooo/                   OS: Arch Linux x86_64
+                 `+oooo:                  Host: Aspire E1-571 V1.09
+                `+oooooo:                 Kernel: 6.14.9-arch1-1
                -+oooooo+:                Uptime: 17 hours, 9 mins
              `/:-:++oooo+:               Packages: 683 (pacman)
             `/++++/+++++++:              Shell: bash 5.3.9
@@ -33,5 +35,6 @@ archlinux com i3wm, no meu notebook.
  `++:.                           `-/+/
  .`                                 `/
 
-
-[math@arch ~]$
+$ 
+{{< /file-tree-item >}}
+{{< /filetree >}}
