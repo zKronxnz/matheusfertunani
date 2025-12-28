@@ -1,0 +1,14 @@
+{{ $posts := where site.RegularPages "Type" "post" }}
+{{ $recent := $posts | first 5 }}
+
+{{ if $recent }}
+<ul>
+  {{ range $recent }}
+  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> - {{ .Date.Format "02/01/2006" }}</li>
+  {{ end }}
+</ul>
+{{ end }}
+
+{{ if gt (len $posts) 5 }}
+<p><a href="/blog">Ver todos os posts →</a></p>
+{{ end }}

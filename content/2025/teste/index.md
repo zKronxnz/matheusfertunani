@@ -5,6 +5,7 @@ slug: bem-vindos
 tags:
 - narrative
 - first-post
+type: post
 draft: false
 ---
 

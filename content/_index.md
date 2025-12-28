@@ -8,11 +8,7 @@ Este é o meu blog pessoal onde compartilho assuntos pessoais relacionados a TI.
 
 ## Posts Recentes
 
-{{ range first 5 (where site.RegularPages "Section" "in" (slice "2025" "2024" "2023")) }}
-- [{{ .Title }}]({{ .RelPermalink }}) - {{ .Date.Format "02/01/2006" }}
-{{ end }}
-
-[Ver todos os posts →]({{ relref "blog" }})
+{{< recent-posts >}}
 
 ## Sobre Mim
 
