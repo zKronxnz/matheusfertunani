@@ -8,7 +8,7 @@ Este é o meu blog pessoal onde compartilho assuntos pessoais relacionados a TI.
 
 ## Posts Recentes
 
-- [Bem Vindos](/2025/teste/) - 27/12/2025
+- [Bem Vindos](/2025/primeiro-post/) - 28/12/2025
 
 [Ver todos os posts →](/blog)
 
