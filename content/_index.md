@@ -8,8 +8,11 @@ Este é o meu blog pessoal onde compartilho assuntos pessoais relacionados a TI.
 
 ## Posts Recentes
 
+{{ range first 5 (where site.RegularPages "Section" "in" (slice "2025" "2024" "2023")) }}
+- [{{ .Title }}]({{ .RelPermalink }}) - {{ .Date.Format "02/01/2006" }}
+{{ end }}
 
----
+[Ver todos os posts →]({{ relref "blog" }})
 
 ## Sobre Mim
 
@@ -19,7 +22,7 @@ Olá! Sou Matheus Fertunani, curioso em TI.
 Olá! Sou Matheus Fertunani, instusiasta em programação, meu primeiro contato verdadeiro com programação foi em 2017-2018,
 onde comecei a aprender programação com vontade de criar um servidor de minecraft, e entender como isso funcionava,
 então depois de muitas tentativas falhas a tentar iniciar um .bat baixado de videos aleatorios sem nem saber oque estava fazendo,
-baixava .rar de servidores e executava na máquina local mesmo sem nem pensar, executava tudo como administrador e não estava nem ai.
+baixava .rar de servidores e executava na máquina local mesmo sem nem pensar, executava tudo como administrador e não estava nem  ai.
 depois de um bom tempo conheci um canal no youtube chamado EduardDev [https://www.youtube.com/EduardDev], aprendi bastante
 ainda mais que era videos em português sobre um assunto que eu tinha tanto interesse, utilizando a IDE eclipse com java foi assim
 que fiz meus primeiros codigos que nem utilizava github ainda, deixava salvo no pc mesmo, fui aprender git bem depois, 
