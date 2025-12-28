@@ -26,9 +26,6 @@ menu:
     - name: Blog
       pageRef: /blog
       weight: 1
-    - name: About
-      pageRef: /about
-      weight: 2
     - name: GitHub
       url: "https://github.com/zKronxnz/matheusfertunani"
       weight: 3
