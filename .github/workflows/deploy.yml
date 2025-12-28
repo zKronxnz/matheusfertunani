@@ -1,0 +1,40 @@
+name: Deploy to Square Cloud
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '.github/workflows/deploy.yml'
+      - 'README.md'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.153.3'
+          extended: true
+          
+      - name: Build Hugo site
+        run: |
+          hugo --gc --minify --cleanDestinationDir
+          
+      - name: Setup Square Cloud CLI
+        uses: squarecloudofc/github-action@v2
+        with:
+          install-only: true
+          
+      - name: Deploy to Square Cloud
+        env:
+          SQUARE_TOKEN: ${{ secrets.SQUARE_TOKEN }}
+          SQUARE_APPLICATION_ID: ${{ secrets.SQUARE_APPLICATION_ID }}
+        run: |
+          cd public
+          squarecloud upload --appid $SQUARE_APPLICATION_ID --no-prompt

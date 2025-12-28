@@ -1,163 +1,75 @@
-# AkitaOnRails - based on Hextra Starter Template
+# Matheus Fertunani Blog
 
-I have tweaked the Starter Template for the AkitaOnRails Blog. Check their github repo for more info.
+Blog estático desenvolvido com Hugo e deploy automático via GitHub Actions para Square Cloud.
 
-I will accept some pull requests, but do not make any massive changes, only tweaks.
+## 🚀 Como Criar Novos Posts
 
-## Desenvolvimento Local
-
-### Pré-requisitos
-
-**Docker (Recomendado)**
-
-- Docker e Docker Compose
-
-**Instalação Local**
-
-- Hugo (Extended version)
-- Go
-- Ruby
-- Git
-
-### Usando Docker
-
-1. **Clone o repositório:**
-
-```shell
-git clone https://github.com/akitaonrails/akitaonrails.github.io.git
-cd akitaonrails.github.io
+### Método 1: Automático (Recomendado)
+```bash
+./publicar-post.sh "Título do meu post" "url-amigavel"
 ```
 
-2. **Inicie o ambiente:**
+### Método 2: Manual
+1. Criar diretório: `content/ANO/url-amigavel/`
+2. Criar arquivo `index.md` com template
+3. Atualizar `content/_index.md` e `content/blog/_index.md`
+4. Fazer commit e push
 
-```shell
-./scripts/dev.sh start
+## 📁 Estrutura do Projeto
+
+```
+├── content/              # Conteúdo do site
+│   ├── _index.md        # Página inicial
+│   ├── blog/
+│   │   └── _index.md   # Página do blog
+│   └── 2025/
+│       └── post-1/
+│           └── index.md
+├── layouts/              # Templates personalizados
+├── static/              # Arquivos estáticos
+├── hugo.yaml           # Configuração do Hugo
+├── squarecloud.app      # Configuração da Square Cloud
+├── .github/
+│   └── workflows/
+│       └── deploy.yml   # GitHub Actions
+├── criar-post.sh       # Script para criar posts
+└── publicar-post.sh    # Script completo (criar + publicar)
 ```
 
-3. **Acesse o blog:**
+## 🔧 Configuração de Deploy
 
-- <http://localhost:1313>
+O site faz deploy automático via GitHub Actions para Square Cloud:
+- **Trigger**: Push na branch `master`
+- **Build**: Hugo generates static site
+- **Deploy**: Square Cloud CLI
+- **URL**: https://matheusfertunani.squareweb.app
 
-4. **Comandos úteis:**
+## ⚙️ Variáveis de Ambiente Necessárias
 
-```shell
-./scripts/dev.sh logs           # Ver logs
-./scripts/dev.sh stop           # Parar ambiente
-./scripts/dev.sh new-post       # Criar novo post
-./scripts/dev.sh generate-index # Gerar índice
-./scripts/dev.sh help           # Ver todos os comandos
-```
+No repositório GitHub, configure os Secrets:
+- `SQUARE_TOKEN`: Token da API da Square Cloud
+- `SQUARE_APPLICATION_ID`: ID da aplicação na Square Cloud
 
-### Instalação Local
+## 📝 Exemplo de Post Front Matter
 
-```shell
-# clone repository
-git clone https://github.com/akitaonrails/akitaonrails.github.io.git
-cd akitaonrails.github.io
-
-# adicionar conteúdo
-nvim content/2025/08/29/hello/index.md
-
-# gerar índice
-./scripts/generate_index.rb
-
-# build
-hugo
-
-# rodar servidor
-hugo server --logLevel debug --disableFastRender -p 1313
-```
-
-## Como Contribuir
-
-### 1. Fork e Clone
-
-- Faça um fork do repositório
-- Clone seu fork localmente
-
-### 2. Ambiente de Desenvolvimento
-
-- Use Docker (recomendado) ou instale as dependências localmente
-- Siga as instruções acima para configurar o ambiente
-
-### 3. Fazendo Mudanças
-
-- Crie uma branch para sua feature: `git checkout -b feature/nova-funcionalidade`
-- Faça suas alterações
-- Teste localmente usando `./scripts/dev.sh start` (Docker) ou `hugo server`
-- Commit suas mudanças: `git commit -m "Adiciona nova funcionalidade"`
-
-### 4. Criando Posts
-
-```shell
-# Com Docker
-./scripts/dev.sh new-post "Título do Post"
-
-# Manualmente
-mkdir -p content/2025/01/15/meu-post
-nvim content/2025/01/15/meu-post/index.md
-```
-
-### 5. Estrutura de um Post
-
-```markdown
+```yaml
 ---
-title: "Título do Post"
-date: 2025-01-15T10:00:00-03:00
+title: Título do Post
+date: '2025-12-28T10:00:00-00:00'
+slug: url-amigavel
+tags:
+- tag1
+- tag2
+type: post
 draft: false
-description: "Descrição do post"
-tags: [tag1, tag2]
-categories: [categoria]
+---
+```
+
+## 🌐 Deploy Automático
+
+1. Escreva post com `./publicar-post.sh "Título" "slug"`
+2. Pronto! O site atualiza automaticamente após o push.
+
 ---
 
-Conteúdo do post aqui...
-```
-
-### 6. Pull Request
-
-- Push para sua branch: `git push origin feature/nova-funcionalidade`
-- Abra um Pull Request no GitHub
-- Descreva suas mudanças claramente
-
-## Estrutura do Projeto
-
-```
-akitaonrails.github.io/
-├── content/           # Posts e páginas (Markdown)
-├── layouts/           # Templates HTML
-├── assets/            # CSS, JS, imagens
-├── hugo.yaml         # Configuração do Hugo
-├── go.mod            # Dependências Go
-├── scripts/          # Scripts de desenvolvimento
-├── Dockerfile        # Imagem Docker
-└── docker-compose.yml # Orquestração Docker
-```
-
-## Checklist para Contribuições
-
-- [ ] Testei localmente com Docker ou instalação local
-- [ ] Gerei o índice de posts (`./scripts/dev.sh generate-index`)
-- [ ] Verifiquei se o site funciona corretamente
-- [ ] Segui as convenções de nomenclatura do projeto
-- [ ] Documentei mudanças significativas
-
-## Diretrizes de Contribuição
-
-- Mantenha mudanças pequenas e focadas
-- Teste sempre antes de submeter
-- Use mensagens de commit descritivas
-- Respeite o estilo de código existente
-- Para mudanças grandes, abra uma issue primeiro
-
-## Licença
-
-Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
-
-This work is licensed under a
-[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
-
-[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
-
-[cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
-[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
-[cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
+*Este README será útil para futuro desenvolvimento e manutenção.*

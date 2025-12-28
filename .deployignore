@@ -1,0 +1,35 @@
+# Arquivos para ignorar no deploy
+
+# Hugo
+public/
+resources/_gen/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node
+node_modules/
+
+# Logs
+*.log
+
+# Arquivos temporários
+*.tmp
+*.bak
+
+# Backup dos scripts de post
+*_index.md.bak
+content/blog/_index.md.bak
+content/_index_temp.md
+content/blog_temp.md
+
+# Git
+.git/
+.gitignore
